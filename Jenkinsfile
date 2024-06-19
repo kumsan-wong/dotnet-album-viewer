@@ -10,6 +10,7 @@ pipeline {
             }
         }
         stage('Parallel Hello') {
+            failFast true
             parallel {
                 stage('Parallel Hello1') {
                     agent {
