@@ -16,4 +16,9 @@ pipeline {
             }
         }
     }
+    post { 
+        always { 
+            echo "Build: ${currentBuild.number} Say Hello to my lil friend, MAFAKA!"
+        }
+    }
 }
