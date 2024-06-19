@@ -12,6 +12,7 @@ pipeline {
         stage('Hello2') {
             steps {
                 echo 'Hello World2'
+                echo "${env.BUILD_ID}"
             }
         }
     }
