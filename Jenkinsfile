@@ -15,17 +15,11 @@ pipeline {
             failFast true
             parallel {
                 stage('Parallel Hello1') {
-                    agent {
-                        label "Slave02"
-                    }
                     steps {
                         echo 'Hello World Slave02'
                     }
                 }
                 stage('Parallel Hello2') {
-                    agent {
-                        label "Slave03"
-                    }
                     steps {
                         echo 'Hello World Slave03'
                     }
