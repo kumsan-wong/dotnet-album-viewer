@@ -10,15 +10,16 @@ pipeline {
             }
         }
         stage('Parallel Hello') {
-            agent any
             failFast true
             parallel {
                 stage('Parallel Hello1') {
+                    agent any
                     steps {
                         echo "Hello World ${env.NODE_NAME} ${params.action}"
                     }
                 }
                 stage('Parallel Hello2') {
+                    agent any
                     steps {
                         echo "Hello World ${env.NODE_NAME}"
                     }
