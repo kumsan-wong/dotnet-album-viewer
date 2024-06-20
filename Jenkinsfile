@@ -1,14 +1,12 @@
 pipeline {
-    agent {
-        label "Slave01"
-    }
+    agent none
     triggers {
         pollSCM('H/2 * * * *')
     }
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo "Hello World ${env.NODE_NAME}"
             }
         }
         stage('Parallel Hello') {
@@ -16,12 +14,12 @@ pipeline {
             parallel {
                 stage('Parallel Hello1') {
                     steps {
-                        echo "Hello World Slave02 ${params.action}"
+                        echo "Hello World ${env.NODE_NAME} ${params.action}"
                     }
                 }
                 stage('Parallel Hello2') {
                     steps {
-                        echo 'Hello World Slave03'
+                        echo "Hello World ${env.NODE_NAME}"
                     }
                 }
             }
