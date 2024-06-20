@@ -16,7 +16,7 @@ pipeline {
             parallel {
                 stage('Parallel Hello1') {
                     steps {
-                        echo 'Hello World Slave02 ${params.action}'
+                        echo "Hello World Slave02 ${params.action}"
                     }
                 }
                 stage('Parallel Hello2') {
